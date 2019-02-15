@@ -1,0 +1,7 @@
+- name: Add user keys
+  hosts: 18.217.158.4
+  become: true
+  become_method: sudo
+  remote_user: ansadmin
+  roles:
+    - users
