@@ -5,3 +5,5 @@
   remote_user: ubuntu
   roles:
     - create
+  vars_files:
+    - ./vars_files/aws_keys.yml
