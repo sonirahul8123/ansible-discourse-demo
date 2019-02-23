@@ -19,4 +19,4 @@ Discourse install and deployment on AWS using Ansible
 
 9. Run `one-click-install` script from your home directory.
 
-10. Once creatingEC2 playbook completed, it'll copy list of nameservers provided by AWS in `/tmp/nameservers` file, copy those 4 nameservers and replace it in your hosting site from control panel.
+10. Once `creatingEC2` playbook is completed, it'll copy list of nameservers provided by AWS in `/tmp/nameservers` file, copy those 4 nameservers and replace it in your hosting site from control panel.
