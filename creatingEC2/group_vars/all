@@ -1,8 +1,13 @@
 region: us-east-2
-instance_type: t2.nano
-ami: ami-0653e888ec96eab9b  
-project_name: ansi_disco
+instance_type: t2.small
+ami: ami-0653e888ec96eab9b
+project_name: ansible
 name: discourse
-app_code_user: "ubuntu" 
-hoststring: "ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/etc/ansible/auto/aws-private.pem"
+mysubnet_id: subnet-07fccf6f
+zone_name: webengagediscourse.tk
+record_name: www.webengagediscourse.tk
+ttl_value: 7200
+app_code_user: "ubuntu"
+hoststring: "ansible_ssh_private_key_file=/etc/ansible/aws-private.pem"
 hostpath: "/etc/ansible/hosts"
+ns_file: "/tmp/nameservers"
