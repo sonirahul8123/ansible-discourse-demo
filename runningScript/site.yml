@@ -1,0 +1,6 @@
+- name: Copy script
+  hosts: discourse
+  become: yes
+  remote_user: ubuntu
+  roles:
+    - install

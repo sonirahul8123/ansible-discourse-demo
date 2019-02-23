@@ -1,0 +1,2 @@
+- name: Copy the script on discourse host
+  copy: src=./script/discourse_install.sh dest=/home/ubuntu mode=0777
