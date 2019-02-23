@@ -1,4 +1,4 @@
-# ansible-discourse-demo
+## ansible-discourse-demo
 Discourse install and deployment on AWS using Ansible
 
 1. Clone anisble-discourse-demo in your local machine.
@@ -22,3 +22,11 @@ Discourse install and deployment on AWS using Ansible
 10. Once `creatingEC2` playbook is completed, it'll copy list of nameservers provided by AWS in `/tmp/nameservers` file, copy those 4 nameservers and replace it in your hosting site from control panel.
 
 11. Once script has successfully completed, it would print endpoint of your application.
+
+### How it works
+
+1. creatingEC2 : This playbook will install depenedent libraries, create security group, create hosted zone, copy the list of nameservers created by AWS in `/tmp/nameservers` file, Create an EC2 key for ssh, Save ssh key in `aws-private.pem` file, Create an EC2 instance, Allocating elastic IP to an instance, Copy elastic IP to a file for future use, add the newly created EC2 instance to host group, wait for SSH to come up, add a host to the ansible-playbook in-memory inventory, and add an A record in hosted zone with value as a elastic IP.
+
+2. addingKeys : This playbook will upload ssh key to remote host.
+
+3. runningScript : This playbook will copy main `discourse_install.sh` script to remote host.
