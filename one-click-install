@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+log_info() {
+  printf "\n\e[0;35m $1\e[0m\n\n"
+}
+
+log_info "Installing ansible, pip ..."
+  sudo apt update
+  sudo apt install -y software-properties-common
+  sudo apt-add-repository ppa:ansible/ansible
+  sudo apt update
+  sudo apt install -y ansible
+  sudo apt install python3-pip
+
+log_info "Creating EC2 instance with necessary settings ..."
+  cd /etc/ansible/creatingEC2/
+  ansible-playbook site.yml --ask-vault-pass
+
+log_info "Adding ssh keys to remote host ..."
+  cd /etc/ansible/addingKeys/
+  ansible-playbook site.yml
+
+log_info "Copying discourse installation script on remote host ..."
+  cd /etc/ansible/runningScript/
+  ansible-playbook site.yml
+
+log_info "Running intallation script on remote host ..."
+  elastic_ip=$(</tmp/elastic_ip)
+  c_user=$(id -un)
+  cd /home/"$c_user"
+  ssh -o StrictHostKeyChecking=no "$c_user"@"$elastic_ip" 'bash /home/ubuntu/discourse_install.sh'
+
+log_info "Your application is reachable at $elastic_ip"
