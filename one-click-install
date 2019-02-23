@@ -28,6 +28,6 @@ log_info "Running intallation script on remote host ..."
   elastic_ip=$(</tmp/elastic_ip)
   c_user=$(id -un)
   cd /home/"$c_user"
-  ssh -o StrictHostKeyChecking=no "$c_user"@"$elastic_ip" 'bash /home/ubuntu/discourse_install.sh'
+  ssh -o StrictHostKeyChecking=no "$c_user"@"$elastic_ip" 'bash /home/"$c_user"/discourse_install.sh'
 
 log_info "Your application is reachable at $elastic_ip"
