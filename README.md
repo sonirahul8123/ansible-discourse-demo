@@ -19,7 +19,7 @@ Discourse install and deployment on AWS using Ansible
 
 9. Make sure you have added `[discourse]` group in ansible's `hosts` file.
 
-10. To get rid of ssh key authenticity warning, add below line in `tc/ansible/ansible.cfg`
+10. To get rid of ssh key authenticity warning, add below line in `etc/ansible/ansible.cfg`
 ```
 [defaults]
 host_key_checking = False
