@@ -17,11 +17,18 @@ Discourse install and deployment on AWS using Ansible
 
 8. Edit `/etc/ansible/runningScript/script/discourse_install.sh` file as per your requirement. For example. hostname, developer_emails, smtp_address, smtp_port, smtp_user_name, letsencrypt_account_email and smtp_password.
 
-9. Run `one-click-install` script from your home directory.
+9. Make sure you have added `[discourse]` group in ansible's `hosts` file.
 
-10. Once `creatingEC2` playbook is completed, it'll copy list of nameservers provided by AWS in `/tmp/nameservers` file, copy those 4 nameservers and replace it in your hosting site from control panel.
+10. To get rid of ssh key authenticity warning, add below line in `tc/ansible/ansible.cfg`
+```
+[defaults]
+host_key_checking = False
+  ```
+10. Run `one-click-install` script from your home directory.
 
-11. Once script has successfully completed, it would print endpoint of your application.
+11. Once `creatingEC2` playbook is completed, it'll copy list of nameservers provided by AWS in `/tmp/nameservers` file, copy those 4 nameservers and replace it in your hosting site from control panel.
+
+12. Once script has successfully completed, it would print endpoint of your application.
 
 ### How it works
 
