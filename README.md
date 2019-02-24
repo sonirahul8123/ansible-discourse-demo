@@ -28,7 +28,7 @@ host_key_checking = False
 
 11. Once `creatingEC2` playbook is completed, it'll copy list of nameservers provided by AWS in `/tmp/nameservers` file, copy those 4 nameservers and replace it in your hosting site from control panel.
 
-12. Once script has successfully completed, it would print endpoint of your application.
+12. Once script has successfully completed, it will print endpoint from where your application would be reachable.
 
 ### How it works
 
