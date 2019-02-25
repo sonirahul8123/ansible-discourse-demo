@@ -1,6 +1,8 @@
 ## ansible-discourse-demo
 Discourse install and deployment on AWS using Ansible
-
+<dl>
+<dt>(Disclaimer : This was tested on AWS EC2 instance running latest Ubuntu. Presumably you already have EC2 instance with Ansible installed on it. If you're using local machine, you'll have to make some changes in playbook.)</dt>
+</dl>
 1. Clone anisble-discourse-demo in your local machine.
 
 2. Copy `one-click-install` script to your home directory and make sure it has executable permission on it.
