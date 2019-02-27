@@ -9,8 +9,7 @@ log_info "Installing ansible, pip ..."
   sudo apt install -y software-properties-common
   sudo apt-add-repository ppa:ansible/ansible
   sudo apt update
-  sudo apt install -y ansible
-  sudo apt install python3-pip
+  sudo apt install -y ansible python3-pip
 
 log_info "Creating EC2 instance with necessary settings ..."
   cd /etc/ansible/creatingEC2/
