@@ -9,7 +9,7 @@
 
 2. Copy `one-click-install` script to your home directory and make sure it has executable permission on it.
 
-3. Copy these three directories `creatingEC2`, `addingKeys/` and `runningScript/` from `anisble-discourse-demo` to `/etc/ansible/` directory.
+3. Copy these three directories `creatingEC2/`, `addingKeys/` and `runningScript/` from `anisble-discourse-demo` to `/etc/ansible/` directory.
 
 4. Make necessary changes in `/etc/ansible/creatingEC2/group_vars/all` as per your requirement.
 
